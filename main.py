@@ -4,17 +4,30 @@ import os
 
 load_dotenv()
 cliente = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-pergunta = input("Digite sua pergunta: ")
+
+def carrega(nome_do_arquivo):
+    try:
+        with open(nome_do_arquivo, 'r') as arquivo:
+            dados = arquivo.read()
+            return dados
+    except IOError as e:
+        print(f"Erro ao ler o arquivo {nome_do_arquivo}: {e}")
+
+prompt_usuário = carrega("fluxos_DA.pdf")
+
+prompt = """Você é um consultor de processos internos.
+Seu papel é fornecer orientações claras e precisas sobre procedimentos internos."""
+
 resposta = cliente.chat.completions.create(
-    model="gpt-4o",
+    model="gpt-4o-mini",
     messages=[
         {
             "role": "system",
-            "content": "Você é um consultor de processos internos."
+            "content": prompt
         },
         {
             "role": "user",
-            "content": pergunta
+            "content": prompt_usuário or "Indique o procedimento correto para pedir um carro."
         }
     ]
 )
