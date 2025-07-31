@@ -13,7 +13,7 @@ def carrega(nome_do_arquivo):
     except IOError as e:
         print(f"Erro ao ler o arquivo {nome_do_arquivo}: {e}")
 
-prompt_usuário = carrega("fluxos_DA.pdf")
+prompt_usuário = input("Digite sua pergunta: ")
 
 prompt = """Você é um consultor de processos internos.
 Seu papel é fornecer orientações claras e precisas sobre procedimentos internos."""
@@ -27,7 +27,7 @@ resposta = cliente.chat.completions.create(
         },
         {
             "role": "user",
-            "content": prompt_usuário or "Indique o procedimento correto para pedir um carro."
+            "content": "Indique o procedimento correto para pedir um carro."
         }
     ]
 )

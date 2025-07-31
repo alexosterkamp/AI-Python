@@ -1,0 +1,7 @@
+Com base nas informações fornecidas, a recomendação é a seguinte:
+
+**Recomendação: Acionar setor Anti-Fraude.**
+
+**Classificação do tipo de fraude: Transação Atípica/Alto Valor.**
+
+**Justificativa:** A transação apresenta um valor significativo de R$1103,00 para um artigo esportivo, que é considerado atípico, especialmente quando não condiz com o histórico de compras do cliente. O horário noturno e a localização também contribuem para a suspeita de atividade fraudulenta. É imperativo que o setor Anti-Fraude seja acionado para investigação adicional antes que qualquer processamento adicional ocorra.
